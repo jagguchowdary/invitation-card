@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Invitation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: backgroundChange 10s infinite alternate;
+        }
+        @keyframes backgroundChange {
+            0%, 10% { background: #FDAB9E; }
+            20%, 30% { background: #EAEAEA; }
+            40%, 50% { background: #B9B28A; }
+            60%, 70% { background: #504B38; }
+            80%, 90% { background: #FDAB9E; }
+            60% { background: #2DAA9E; }
+        }
+        @keyframes cardColorChange {
+            70%, 10% { background: #B7B1F2; }
+            20%, 30% { background: #FFB6C1; }
+            40%, 50% { background: #87CEFA; }
+            60%, 70% { background: #98FB98; }
+            80%, 60% { background: #D3E671; }
+            70% { background: #DDA0DD; }
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            animation: cardColorChange 10s infinite alternate;
+        }
+        h1 {
+            font-family:fantasy;
+            color: #56021F;
+            font-size: 60px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #222;
+            font-size: 24px;
+            line-height: 1.0;
+            margin-bottom: 10px;
+        }
+        .details {
+            font-weight: bold;
+            font-size: 26px;
+            color: #5D8736;
+        }
+        .inviters, .contact {
+            font-weight: bold;
+            font-size: 26px;
+            color: #543A14;
+        }
+        .print-button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 22px;
+            background: #FFE893;
+            color: #222;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .print-button:hover {
+            background: #FF748B;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="invitation-card">
+        <h1>You're Invited!</h1>
+        <p>Join us for a <strong>Housewarming Party</strong> to celebrate our new home!</p>
+        <p class="details">📅 March 16, 2025</p>
+        <p class="details">⏰ 12:00 PM onwards</p>
+        <p class="details">📍 Vidhyanagar, Karekallahalli, Railway parallel road, near Ganapathi temple Gauribidanur, Karnataka-561208</p>
+        <hr>
+        <h1>See You Soon!</h1>
+        <p class="inviters">💌 Hosted by: Thimmaiah <br>wife-Sunitha <br>sons-Dhanush & Harsha.</p>
+        <p class="contact">📞+91-9740722054,<br>  +91-9381962632, <br> +91-9108626811.</p>
+        <p>We can't wait to celebrate with you!</p>
+        <button class="print-button" onclick="printInvitation()">Print Invitation</button>
+    </div>
+
+    <script>
+        function printInvitation() {
+            let printContent = document.getElementById('invitation-card').innerHTML;
+            let originalContent = document.body.innerHTML;
+            document.body.innerHTML = printContent;
+            window.print();
+            document.body.innerHTML = originalContent;
+        }
+    </script>
+</body>
+</html>
